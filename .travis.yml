@@ -1,0 +1,31 @@
+env:
+  global:
+    # COVERITY_SCAN_TOKEN
+    # ** specific to your project **
+    - secure: "Tq/8LIf2WFFLPeiuEjMC5ZlUIE9qAZBtwDLReb/+ET7C4PP0YfqjgbcnwVYV7wrkuG2s/ktr/xDuvl7zs+k0Jc1f0/M1NUyfxpYoDEndAPEAEnjulCwhaQLUWopRNUBjzZqDC9SSYlE5heA8pgn47BvqoGKoYso1wJglwX2kVU+zjBc1Bdmo6kOnwDqLyJ06xK8w6jB7ToCvhpHqMQuZw/YLwHupx4bMfU8emjiXNJAhod7r3zWAeTxgMgwJzAyo6aBjbrJTN/MJepVKLsm3WGZBIvre7dDYKORLJEhH20CAsM4207BmEwKLXIkPlOfJpb8uk9iO8t7Cdau5+R/yzGlFLo106sL6lbvM8OZMJwrfgNEaYkY+XB3SQRbWZ+Nn/jVbu+zOFAB/I6kZWB5PDdJGS/A0sxbrcVmx+uxCDlqNiwqjrxFgycWlLNkP734rZxeGAqIvesUa2GQrCd6XHdtSylDsH3763YWg78S9fG/F7W6ls3+Oy6kuzJ6CYrHQQoDGl2Wv8uD1NefZe271ojITmfoc3/pXnx5suRO6Yk+TrXMMC/93Qez6Ci7YzFw6Eq1uBIUYyAQR8n0lDs0mwFCbcCyNwHZSSjcKQze6lnSRSzC8JzOTQ4FwDKqQxJbVWfHco2rJ1NeONZEd3HJLOpy0LEdULS8N17Xs00psZb0="
+
+addons:
+  coverity_scan:
+
+    # GitHub project metadata
+    # ** specific to your project **
+    project:
+      name: wangsongc/msgpack-c
+      version: 3.0.0
+      description: My Fork Project
+
+    # Where email notification of build analysis results will be sent
+    notification_email: 915791187@foxmail.com
+
+    # Commands to prepare for build_command
+    # ** likely specific to your build **
+    build_command_prepend: mkdir build && cd build && cmake ..
+
+    # The command that will be added as an argument to "cov-build" to compile your project for analysis,
+    # ** likely specific to your build **
+    build_command: make
+
+    # Pattern to match selecting branches that will run analysis. We recommend leaving this set to 'coverity_scan'.
+    # Take care in resource usage, and consider the build frequency allowances per
+    #   https://scan.coverity.com/faq#frequency
+    branch_pattern: coverity
