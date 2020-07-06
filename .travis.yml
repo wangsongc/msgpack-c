@@ -31,5 +31,4 @@ addons:
     #   https://scan.coverity.com/faq#frequency
     branch_pattern: coverity
     
-    script:
-      - make -j10
+script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
