@@ -16,7 +16,7 @@ addons:
       description: My Fork Project
 
     # Where email notification of build analysis results will be sent
-    notification_email: 915791187@foxmail.com
+    notification_email: wangsongc@foxmail.com
 
     # Commands to prepare for build_command
     # ** likely specific to your build **
@@ -30,3 +30,6 @@ addons:
     # Take care in resource usage, and consider the build frequency allowances per
     #   https://scan.coverity.com/faq#frequency
     branch_pattern: coverity
+    
+    script:
+      - make -j10
